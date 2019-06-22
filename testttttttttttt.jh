@@ -1,0 +1,20 @@
+entity Student{
+	studentId Integer,
+    name String,
+    dateOfBirth ZonedDateTime,
+    address String,
+    courseId Integer,
+    gender Gender
+}
+entity Course{
+	courseId Integer,
+    name String
+}
+enum Gender {
+    MALE, FEMALE, UNKNOWN
+}
+relationship ManyToOne {
+	Student{courseId} to Course
+}
+
+
